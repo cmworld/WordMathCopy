@@ -1,0 +1,12 @@
+# translation for Simplified Chinese
+
+Shadowsocks=Shadowsocks
+
+# Menu items
+
+About...=关于...
+Quit=退出
+
+
+# Messages
+

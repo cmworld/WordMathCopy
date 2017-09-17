@@ -1,0 +1,2176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>nrtftree-library</name>
+    </assembly>
+    <members>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.ImageNode">
+            <summary>
+            Encapsula un nodo RTF de tipo Imagen (Palabra clave "\pict")
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.ImageNode.data">
+            <summary>
+            Array de bytes con la informaci髇 de la imagen.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.ImageNode.#ctor(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Constructor de la clase ImageNode.
+            </summary>
+            <param name="node">Nodo RTF del que se obtendr醤 los datos de la imagen.</param>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ImageNode.HexData">
+            <summary>
+            Devuelve una cadena de caracteres con el contenido de la imagen en formato hexadecimal.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ImageNode.ImageFormat">
+            <summary>
+            Devuelve el formato original de la imagen.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ImageNode.Width">
+            <summary>
+            Devuelve el ancho de la imagen (en twips).
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ImageNode.Height">
+            <summary>
+            Devuelve el alto de la imagen (en twips).
+            </summary> 
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ImageNode.DesiredWidth">
+            <summary>
+            Devuelve el ancho objetivo de la imagen (en twips).
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ImageNode.DesiredHeight">
+            <summary>
+            Devuelve el alto objetivo de la imagen (en twips).
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ImageNode.ScaleX">
+            <summary>
+            Devuelve la escala horizontal de la imagen, en porcentaje.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ImageNode.ScaleY">
+            <summary>
+            Devuelve la escala vertical de la imagen, en porcentaje.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ImageNode.Bitmap">
+            <summary>
+            Devuelve la imagen en un objeto de mapa de bits.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.ImageNode.GetByteData">
+            <summary>
+            Devuelve un array de bytes con el contenido de la imagen.
+            </summary>
+            <return>Array de bytes con el contenido de la imagen.</return>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.ImageNode.SaveImage(System.String)">
+            <summary>
+            Guarda una imagen a fichero con el formato original.
+            </summary>
+            <param name="filePath">Ruta del fichero donde se guardar?la imagen.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.ImageNode.SaveImage(System.String,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Guarda una imagen a fichero con un formato determinado indicado como par醡etro.
+            </summary>
+            <param name="filePath">Ruta del fichero donde se guardar?la imagen.</param>
+            <param name="format">Formato con el que se escribir?la imagen.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.ImageNode.getImageData">
+            <summary>
+            Obtiene los datos de la imagen a partir de la informaci髇 contenida en el nodo RTF.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.InfoGroup">
+            <summary>
+            Clase que encapsula toda la informaci髇 contenida en un grupo "\info" de un documento RTF.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Title">
+            <summary>
+            T韙ulo del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Subject">
+            <summary>
+            Tema del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Author">
+            <summary>
+            Autor del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Manager">
+            <summary>
+            Manager del autor del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Company">
+            <summary>
+            Compa耥a del autor del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Operator">
+            <summary>
+            趌tima persona que ha realizao cambios sobre el documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Category">
+            <summary>
+            Categor韆 del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Keywords">
+            <summary>
+            Palabras clave del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Comment">
+            <summary>
+            Comentarios.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.DocComment">
+            <summary>
+            Comentarios mostrados en el cuadro de Texto "Summary Info" o "Properties" de Microsoft Word.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.HlinkBase">
+            <summary>
+            La direcci髇 base usada en las rutas relativas de los enlaces del documento. Puede ser una ruta local o una URL.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.CreationTime">
+            <summary>
+            Fecha/Hora de creaci髇 del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.RevisionTime">
+            <summary>
+            Fecha/Hora de revisi髇 del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.LastPrintTime">
+            <summary>
+            Fecha/Hora de 鷏tima impresi髇 del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.BackupTime">
+            <summary>
+            Fecha/Hora de 鷏tima copia del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Version">
+            <summary>
+            Versi髇 del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.InternalVersion">
+            <summary>
+            Versi髇 interna del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.EditingTime">
+            <summary>
+            Tiempo total de edici髇 del documento (en minutos).
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.NumberOfPages">
+            <summary>
+            N鷐ero de p醙inas del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.NumberOfWords">
+            <summary>
+            N鷐ero de palabras del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.NumberOfChars">
+            <summary>
+            N鷐ero de caracteres del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.InfoGroup.Id">
+            <summary>
+            Identificaci髇 interna del documento.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.InfoGroup.ToString">
+            <summary>
+            Devuelve la representaci髇 del nodo en forma de cadena de caracteres.
+            </summary>
+            <returns>Representaci髇 del nodo en forma de cadena de caracteres.</returns>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.ObjectNode">
+            <summary>
+            Encapsula un nodo RTF de tipo Objeto (Palabra clave "\object")
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.ObjectNode.objdata">
+            <summary>
+            Array de bytes con la informaci髇 del objeto.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.ObjectNode.#ctor(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Constructor de la clase ObjectNode.
+            </summary>
+            <param name="node">Nodo RTF del que se obtendr醤 los datos de la imagen.</param>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ObjectNode.ObjectType">
+            <summary>
+            Devuelve el tipo de objeto.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ObjectNode.ObjectClass">
+            <summary>
+            Devuelve la clase del objeto.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ObjectNode.ResultNode">
+            <summary>
+            Devuelve el grupo RTF que encapsula el nodo "\result" del objeto.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.ObjectNode.HexData">
+            <summary>
+            Devuelve una cadena de caracteres con el contenido del objeto en formato hexadecimal.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.ObjectNode.GetByteData">
+            <summary>
+            Devuelve un array de bytes con el contenido del objeto.
+            </summary>
+            <returns>Array de bytes con el contenido del objeto.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.ObjectNode.getObjectData">
+            <summary>
+            Obtiene los datos binarios del objeto a partir de la informaci髇 contenida en el nodo RTF.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.RtfCharFormat">
+            <summary>
+            Representa un formato de texto.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.bold">
+            <summary>
+            Negrita.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.italic">
+            <summary>
+            Cursiva.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.underline">
+            <summary>
+            Subrayado.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.font">
+            <summary>
+            Nombre de la fuente.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.size">
+            <summary>
+            Tama駉 de la fuente.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.color">
+            <summary>
+            Color de la fuente.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.Bold">
+            <summary>
+            Fuente negrita.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.Italic">
+            <summary>
+            Fuente cursiva.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.Underline">
+            <summary>
+            Fuente subrayada.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.Font">
+            <summary>
+            Tipo de fuente.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.Size">
+            <summary>
+            Tama駉 de fuente.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfCharFormat.Color">
+            <summary>
+            Color de fuente.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.RtfColorTable">
+            <summary>
+            Tabla de colores de un documento RTF.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfColorTable.colors">
+            <summary>
+            Lista interna de colores.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfColorTable.#ctor">
+            <summary>
+            Constructor de la clase RtfColorTable.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfColorTable.AddColor(System.Drawing.Color)">
+            <summary>
+            Inserta un nuevo color en la tabla de colores.
+            </summary>
+            <param name="color">Nuevo color a insertar.</param>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfColorTable.Item(System.Int32)">
+            <summary>
+            Obtiene el color n-閟imo de la tabla de colores.
+            </summary>
+            <param name="index">Indice del color a recuperar.</param>
+            <returns>Color n-閟imo de la tabla de colores.</returns>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfColorTable.Count">
+            <summary>
+            N鷐ero de colores en la tabla.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfColorTable.IndexOf(System.Drawing.Color)">
+            <summary>
+            Obtiene el 韓dice de un color determinado en la tabla.
+            </summary>
+            <param name="color">Color a consultar.</param>
+            <returns>Indice del color consultado.</returns>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.RtfDocument">
+            <summary>
+            Clase para la generaci髇 de documentos RTF.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocument.encoding">
+            <summary>
+            Codificaci髇 del documento.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocument.fontTable">
+            <summary>
+            Tabla de fuentes del documento.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocument.colorTable">
+            <summary>
+            Tabla de colores del documento.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocument.mainGroup">
+            <summary>
+            Grupo principal del documento.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocument.currentFormat">
+            <summary>
+            Formato actual de caracter.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocument.currentParFormat">
+            <summary>
+            Formato actual de p醨rafo.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocument.docFormat">
+            <summary>
+            Formato del documento.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.#ctor(System.Text.Encoding)">
+            <summary>
+            Constructor de la clase RtfDocument.
+            </summary>
+            <param name="enc">Codificaci髇 del documento a generar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.#ctor">
+            <summary>
+            Constructor de la clase RtfDocument. Se utilizar?la codificaci髇 por defecto del sistema.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.Save(System.String)">
+            <summary>
+            Guarda el documento como fichero RTF en la ruta indicada.
+            </summary>
+            <param name="path">Ruta del fichero a crear.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.AddText(System.String,Net.Sgoliver.NRtfTree.Util.RtfCharFormat)">
+            <summary>
+            Inserta un fragmento de texto en el documento con un formato de texto determinado.
+            </summary>
+            <param name="text">Texto a insertar.</param>
+            <param name="format">Formato del texto a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.AddText(System.String)">
+            <summary>
+            Inserta un fragmento de texto en el documento con el formato de texto actual.
+            </summary>
+            <param name="text">Texto a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.AddNewLine(System.Int32)">
+            <summary>
+            Inserta un n鷐ero determinado de saltos de l韓ea en el documento.
+            </summary>
+            <param name="n">N鷐ero de saltos de l韓ea a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.AddNewLine">
+            <summary>
+            Inserta un salto de l韓ea en el documento.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.AddNewParagraph">
+            <summary>
+            Inicia un nuevo p醨rafo.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.AddNewParagraph(System.Int32)">
+            <summary>
+            Inserta un n鷐ero determinado de saltos de p醨rafo en el documento.
+            </summary>
+            <param name="n">N鷐ero de saltos de p醨rafo a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.AddNewParagraph(Net.Sgoliver.NRtfTree.Util.RtfParFormat)">
+            <summary>
+            Inicia un nuevo p醨rafo con el formato especificado.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.AddImage(System.String,System.Int32,System.Int32)">
+            <summary>
+            Inserta una imagen en el documento.
+            </summary>
+            <param name="path">Ruta de la imagen a insertar.</param>
+            <param name="width">Ancho deseado de la imagen en el documento.</param>
+            <param name="height">Alto deseado de la imagen en el documento.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.ResetCharFormat">
+            <summary>
+            Establece el formato de caracter por defecto.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.ResetParFormat">
+            <summary>
+            Establece el formato de p醨rafo por defecto.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.ResetFormat">
+            <summary>
+            Establece el formato de caracter y p醨rafo por defecto.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.UpdateDocFormat(Net.Sgoliver.NRtfTree.Util.RtfDocumentFormat)">
+            <summary>
+            Actualiza los valores de las propiedades de formato de documento.
+            </summary>
+            <param name="format">Formato de documento.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.UpdateCharFormat(Net.Sgoliver.NRtfTree.Util.RtfCharFormat)">
+            <summary>
+            Actualiza los valores de las propiedades de formato de texto y p醨rafo.
+            </summary>
+            <param name="format">Formato de texto a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.UpdateParFormat(Net.Sgoliver.NRtfTree.Util.RtfParFormat)">
+            <summary>
+            Establece el formato de p醨rafo pasado como par醡etro.
+            </summary>
+            <param name="format">Formato de p醨rafo a utilizar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.SetAlignment(Net.Sgoliver.NRtfTree.Util.TextAlignment)">
+            <summary>
+            Estable la alineaci髇 del texto dentro del p醨rafo.
+            </summary>
+            <param name="align">Tipo de alineaci髇.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.SetLeftIndentation(System.Single)">
+            <summary>
+            Establece la sangr韆 izquierda del p醨rafo.
+            </summary>
+            <param name="val">Sangr韆 izquierda en cent韒etros.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.SetRightIndentation(System.Single)">
+            <summary>
+            Establece la sangr韆 derecha del p醨rafo.
+            </summary>
+            <param name="val">Sangr韆 derecha en cent韒etros.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.SetFormatBold(System.Boolean)">
+            <summary>
+            Establece el indicativo de fuente negrita.
+            </summary>
+            <param name="val">Indicativo de fuente negrita.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.SetFormatItalic(System.Boolean)">
+            <summary>
+            Establece el indicativo de fuente cursiva.
+            </summary>
+            <param name="val">Indicativo de fuente cursiva.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.SetFormatUnderline(System.Boolean)">
+            <summary>
+            Establece el indicativo de fuente subrayada.
+            </summary>
+            <param name="val">Indicativo de fuente subrayada.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.SetFormatColor(System.Drawing.Color)">
+            <summary>
+            Establece el color de fuente actual.
+            </summary>
+            <param name="val">Color de la fuente.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.SetFormatSize(System.Int32)">
+            <summary>
+            Establece el tama駉 de fuente actual.
+            </summary>
+            <param name="val">Tama駉 de la fuente.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.SetFormatFont(System.String)">
+            <summary>
+            Establece el tipo de letra actual.
+            </summary>
+            <param name="val">Tipo de letra.</param>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfDocument.Text">
+            <summary>
+            Obtiene el texto plano contenido en el documento RTF
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfDocument.Rtf">
+            <summary>
+            Obtiene el c骴igo RTF del documento RTF
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfDocument.Tree">
+            <summary>
+            Obtiene el 醨bol RTF del documento actual
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.GetTree">
+            <summary>
+            Obtiene el 醨bol RTF equivalente al documento actual.
+            <returns>羠bol RTF equivalente al documento en el estado actual.</returns>
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.GetHexa(System.Byte)">
+            <summary>
+            Obtiene el c骴igo hexadecimal de un entero.
+            </summary>
+            <param name="code">N鷐ero entero.</param>
+            <returns>C骴igo hexadecimal del entero pasado como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.InsertFontTable(Net.Sgoliver.NRtfTree.Core.RtfTree)">
+            <summary>
+            Inserta el c骴igo RTF de la tabla de fuentes en el documento.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.InsertColorTable(Net.Sgoliver.NRtfTree.Core.RtfTree)">
+            <summary>
+            Inserta el c骴igo RTF de la tabla de colores en el documento.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.InsertGenerator(Net.Sgoliver.NRtfTree.Core.RtfTree)">
+            <summary>
+            Inserta el c骴igo RTF de la aplicaci髇 generadora del documento.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.InsertText(System.String)">
+            <summary>
+            Inserta todos los nodos de texto y control necesarios para representar un texto determinado.
+            </summary>
+            <param name="text">Texto a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.UpdateFontTable(Net.Sgoliver.NRtfTree.Util.RtfCharFormat)">
+            <summary>
+            Actualiza la tabla de fuentes con una nueva fuente si es necesario.
+            </summary>
+            <param name="format"></param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.UpdateColorTable(Net.Sgoliver.NRtfTree.Util.RtfCharFormat)">
+            <summary>
+            Actualiza la tabla de colores con un nuevo color si es necesario.
+            </summary>
+            <param name="format"></param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.InitializeTree">
+            <summary>
+            Inicializa el arbol RTF con todas las claves de la cabecera del documento.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.InsertDocSettings(Net.Sgoliver.NRtfTree.Core.RtfTree)">
+            <summary>
+            Inserta las propiedades de formato del documento
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfDocument.calcTwips(System.Single)">
+            <summary>
+            Convierte entre cent韒etros y twips.
+            </summary>
+            <param name="centimeters">Valor en cent韒etros.</param>
+            <returns>Valor en twips.</returns>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.RtfDocumentFormat">
+            <summary>
+            Representa un formato de documento.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocumentFormat.marginl">
+            <summary>
+            Margen izquierdo (en cm.)
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocumentFormat.marginr">
+            <summary>
+            Margen derecho (en cm.)
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocumentFormat.margint">
+            <summary>
+            Margen superior (en cm.)
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfDocumentFormat.marginb">
+            <summary>
+            Margen inferior (en cm.)
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfDocumentFormat.MarginL">
+            <summary>
+            Margen Izquierdo en centímetros.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfDocumentFormat.MarginR">
+            <summary>
+            Margen Derecho en centímetros.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfDocumentFormat.MarginT">
+            <summary>
+            Margen Superior en centímetros.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfDocumentFormat.MarginB">
+            <summary>
+            Margen Inferior en centímetros.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.RtfFontTable">
+            <summary>
+            Tabla de fuentes de un documento RTF.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfFontTable.fonts">
+            <summary>
+            Lista interna de fuentes.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfFontTable.#ctor">
+            <summary>
+            Constructor de la clase RtfFontTable.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfFontTable.AddFont(System.String)">
+            <summary>
+            Inserta un nueva fuente en la tabla de fuentes.
+            </summary>
+            <param name="name">Nueva fuente a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfFontTable.AddFont(System.Int32,System.String)">
+            <summary>
+            Inserta un nueva fuente en la tabla de fuentes.
+            </summary>
+            <param name="index">Indice de la fuente a insertar.</param>
+            <param name="name">Nueva fuente a insertar.</param>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfFontTable.Item(System.Int32)">
+            <summary>
+            Obtiene la fuente n-閟ima de la tabla de fuentes.
+            </summary>
+            <param name="index">Indice de la fuente a recuperar.</param>
+            <returns>Fuente n-閟ima de la tabla de fuentes.</returns>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfFontTable.Count">
+            <summary>
+            N鷐ero de fuentes en la tabla.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfFontTable.IndexOf(System.String)">
+            <summary>
+            Obtiene el 韓dice de una fuente determinado en la tabla.
+            </summary>
+            <param name="name">Fuente a consultar.</param>
+            <returns>Indice de la fuente consultada.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfFontTable.newFontIndex">
+            <summary>
+            Obtiene un 韓dice que no se est?usando en la tabla.
+            </summary>
+            <returns>Obtiene un 韓dice que no se est?usando en la tabla.</returns>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.RtfParFormat">
+            <summary>
+            Representa un formato de párrafo.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfParFormat.Alignment">
+            <summary>
+            Alineación del párrafo.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfParFormat.LeftIndentation">
+            <summary>
+            Sangría izquierda del párrafo.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfParFormat.RightIndentation">
+            <summary>
+            Sangría derecha del párrafo.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet">
+            <summary>
+            Representa una hoja de estilo de un documento RTF
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Index">
+            <summary>
+            Índice de la hoja de estilo
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Name">
+            <summary>
+            Nombre de la hoja de estilo.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Type">
+            <summary>
+            Tipo de la hoja de estilo.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Additive">
+            <summary>
+            En las hojas de estilo de tipo Caracter indica si el estilo indicado se va a sumar al estilo de párrafo actual, en vez de sobreescribir completamente el estilo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.BasedOn">
+            <summary>
+            Indica el estilo en el que está basado el estilo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Next">
+            <summary>
+            Indica el estilo que se usará en el siguiente párrafo.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.AutoUpdate">
+            <summary>
+            Indican si los estilos se actualizarán automáticamente.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Hidden">
+            <summary>
+            Establece que el estilo actual no aparecerá en las listas desplegables de estilos.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Link">
+            <summary>
+            Indica el estilo al que está enlazado el actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Locked">
+            <summary>
+            Indica que el estilo actual está bloqueado.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Personal">
+            <summary>
+            Indica que el estilo actual es el estilo de e-mail personal.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Compose">
+            <summary>
+            Indica que el estilo actual es el estilo de composición de e-mail.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Reply">
+            <summary>
+            Indica que el estilo actual es el estilo de respuesta de e-mail.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Styrsid">
+            <summary>
+            Tied to the rsid table, N is the rsid of the author who implemented the style.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.SemiHidden">
+            <summary>
+            Indica que el estilo no aparecerá en los menús desplegables.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.KeyCode">
+            <summary>
+            Indica la tecla rápida para establecer el estilo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.Formatting">
+            <summary>
+            Opciones de formato contenidas en el estilo actual.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfStyleSheet.#ctor">
+            <summary>
+            COnstructor de la clase RtfStyleSheet.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable">
+            <summary>
+            Representa la tabla de estilos de un documento RTF.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable.#ctor">
+            <summary>
+            Constructor de la tabla de estilos.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable.AddStyleSheet(Net.Sgoliver.NRtfTree.Util.RtfStyleSheet)">
+            <summary>
+            Añade un nuevo estilo a la tabla de estilos. El estilo se añadirá con un nuevo índice no existente en la tabla.
+            </summary>
+            <param name="ss">Nuevo estilo a añadir a la tabla.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable.AddStyleSheet(System.Int32,Net.Sgoliver.NRtfTree.Util.RtfStyleSheet)">
+            <summary>
+            Añade un nuevo estilo a la tabla de estilos. El estilo se añadirá con el índice de estilo pasado como parámetro.
+            </summary>
+            <param name="index">Indice del estilo a añadir a la tabla.</param>
+            <param name="ss">Nuevo estilo a añadir a la tabla.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable.RemoveStyleSheet(System.Int32)">
+            <summary>
+            Elimina un estilo de la tabla de estilos por índice.
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable.RemoveStyleSheet(Net.Sgoliver.NRtfTree.Util.RtfStyleSheet)">
+            <summary>
+            Elimina de la tabla de estilos el estilo pasado como parámetro.
+            </summary>
+            <param name="ss"></param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable.GetStyleSheet(System.Int32)">
+            <summary>
+            Recupera un estilo de la tabla de estilos por índice.
+            </summary>
+            <param name="index">Indice del estilo a recuperar.</param>
+            <returns>Estilo cuyo índice es el pasado como parámetro.</returns>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable.Item(System.Int32)">
+            <summary>
+            Recupera un estilo de la tabla de estilos por índice.
+            </summary>
+            <param name="index">Indice del estilo a recuperar.</param>
+            <returns>Estilo cuyo índice es el pasado como parámetro.</returns>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable.Count">
+            <summary>
+            Número de estilos contenidos en la tabla de estilos.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable.IndexOf(System.String)">
+            <summary>
+            Índice del estilo cuyo nombre es el pasado como parámetro.
+            </summary>
+            <param name="name">Nombre del estilo buscado.</param>
+            <returns>Estilo cuyo nombre es el pasado como parámetro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetTable.newStyleSheetIndex">
+            <summary>
+            Calcula un nuevo índice para insertar un estilo en la tabla.
+            </summary>
+            <returns>Índice del próximo estilo a insertar.</returns>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetType">
+            <summary>
+            Tipos de hojas de estilo de un documento RTF.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetType.None">
+            <summary>
+            Hoja de estilo sin definir.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetType.Character">
+            <summary>
+            Hoja de estilo de caracter.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetType.Paragraph">
+            <summary>
+            Hoja de estilo de párrafo.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetType.Section">
+            <summary>
+            Hoja de estilo de sección.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.RtfStyleSheetType.Table">
+            <summary>
+            Hoja de estilo de tabla.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Util.TextAlignment">
+            <summary>
+            Tipos de alineación de texto.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.TextAlignment.Left">
+            <summary>
+            Texto alineado a la izquierda.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.TextAlignment.Right">
+            <summary>
+            Texto alineado a la derecha.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.TextAlignment.Centered">
+            <summary>
+            Texto centrado.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Util.TextAlignment.Justified">
+            <summary>
+            Texto justificado.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.RtfLex">
+            <summary>
+            Analizador l閤ico (tokenizador) para documentos en formato RTF. Analiza el documento y devuelve de 
+            forma secuencial todos los elementos RTF leidos (tokens).
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfLex.rtf">
+            <summary>
+            Fichero abierto.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfLex.keysb">
+            <summary>
+            StringBuilder para construir la palabra clave / fragmento de texto
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfLex.parsb">
+            <summary>
+            StringBuilder para construir el par醡etro de la palabra clave
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfLex.c">
+            <summary>
+            Caracter leido del documento
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfLex.Eof">
+            <summary>
+            Marca de fin de fichero.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfLex.#ctor(System.IO.TextReader)">
+            <summary>
+            Constructor de la clase RtfLex
+            </summary>
+            <param name="rtfReader">Stream del fichero a analizar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfLex.NextToken">
+            <summary>
+            Lee un nuevo token del documento RTF.
+            </summary>
+            <returns>Siguiente token leido del documento.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfLex.parseKeyword(Net.Sgoliver.NRtfTree.Core.RtfToken)">
+            <summary>
+            Lee una palabra clave del documento RTF.
+            </summary>
+            <param name="token">Token RTF al que se asignar?la palabra clave.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfLex.parseText(Net.Sgoliver.NRtfTree.Core.RtfToken)">
+            <summary>
+            Lee una cadena de Texto del documento RTF.
+            </summary>
+            <param name="token">Token RTF al que se asignar?la palabra clave.</param>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.RtfMerger">
+            <summary>
+            Clase para combinar varios documentos RTF.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.#ctor(System.String)">
+            <summary>
+            Constructor de la clase RtfMerger. 
+            </summary>
+            <param name="templatePath">Ruta del documento plantilla.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.#ctor(Net.Sgoliver.NRtfTree.Core.RtfTree)">
+            <summary>
+            Constructor de la clase RtfMerger. 
+            </summary>
+            <param name="templateTree">Ruta del documento plantilla.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.#ctor">
+            <summary>
+            Constructor de la clase RtfMerger. 
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.AddPlaceHolder(System.String,System.String)">
+            <summary>
+            Asocia un nuevo par醡etro de sustituci髇 (placeholder) con la ruta del documento a insertar.
+            </summary>
+            <param name="ph">Nombre del placeholder.</param>
+            <param name="path">Ruta del documento a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.AddPlaceHolder(System.String,Net.Sgoliver.NRtfTree.Core.RtfTree)">
+            <summary>
+            Asocia un nuevo par醡etro de sustituci髇 (placeholder) con la ruta del documento a insertar.
+            </summary>
+            <param name="ph">Nombre del placeholder.</param>
+            <param name="docTree">羠bol RTF del documento a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.RemovePlaceHolder(System.String)">
+            <summary>
+            Desasocia un par醡etro de sustituci髇 (placeholder) con la ruta del documento a insertar.
+            </summary>
+            <param name="ph">Nombre del placeholder.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.Merge(System.Boolean)">
+            <summary>
+            Realiza la combinaci髇 de los documentos RTF.
+            <param name="removeLastPar">Indica si se debe eliminar el 鷏timo nodo \par de los documentos insertados en la plantilla.</param>
+            <returns>Devuelve el 醨bol RTF resultado de la fusi髇.</returns>
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.Merge">
+            <summary>
+            Realiza la combinaci髇 de los documentos RTF.
+            <returns>Devuelve el 醨bol RTF resultado de la fusi髇.</returns>
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfMerger.Placeholders">
+            <summary>
+            Devuelve la lista de par醡etros de sustituci髇 con el formato: [string, RtfTree]
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfMerger.Template">
+            <summary>
+            Obtiene o establece el 醨bol RTF del documento plantilla.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.analizeTextContent(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Analiza el texto del documento en busca de par醡etros de reemplazo y combina los documentos.
+            </summary>
+            <param name="parentNode">Nodo del 醨bol a procesar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.mergeCore(Net.Sgoliver.NRtfTree.Core.RtfTreeNode,System.Int32,Net.Sgoliver.NRtfTree.Core.RtfTree,System.String,System.Int32)">
+            <summary>
+            Inserta un nuevo 醨bol en el lugar de una etiqueta de texto del 醨bol base.
+            </summary>
+            <param name="parentNode">Nodo de tipo grupo que se est?procesando.</param>
+            <param name="iNdIndex">蚽dice (dentro del grupo padre) del nodo texto que se est?procesando.</param>
+            <param name="docToInsert">Nuevo 醨bol RTF a insertar.</param>
+            <param name="strCompletePlaceholder">Texto del la etiqueta que se va a reemplazar.</param>
+            <param name="intPlaceHolderNodePos">Posici髇 de la etiqueta que se va a reemplazar dentro del nodo texto que se est?procesando.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.getFontID(Net.Sgoliver.NRtfTree.Util.RtfFontTable@,System.String)">
+            <summary>
+            Obtiene el c骴igo de la fuente pasada como par醡etro, insert醤dola en la tabla de fuentes si es necesario.
+            </summary>
+            <param name="fontDestTbl">Tabla de fuentes resultante.</param>
+            <param name="sFontName">Fuente buscada.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.getColorID(Net.Sgoliver.NRtfTree.Util.RtfColorTable,System.Drawing.Color)">
+            <summary>
+            Obtiene el c骴igo del color pasado como par醡etro, insert醤dolo en la tabla de colores si es necesario.
+            </summary>
+            <param name="colorDestTbl">Tabla de colores resultante.</param>
+            <param name="iColorName">Color buscado.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.mainAdjustFont(Net.Sgoliver.NRtfTree.Core.RtfTree)">
+            <summary>
+            Ajusta las fuentes del documento a insertar.
+            </summary>
+            <param name="docToInsert">Documento a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.adjustFontRecursive(Net.Sgoliver.NRtfTree.Core.RtfTreeNode,Net.Sgoliver.NRtfTree.Util.RtfFontTable,Net.Sgoliver.NRtfTree.Util.RtfFontTable)">
+            <summary>
+            Ajusta las fuentes del documento a insertar.
+            </summary>
+            <param name="parentNode">Nodo grupo que se est?procesando.</param>
+            <param name="fontDestTbl">Tabla de fuentes resultante.</param>
+            <param name="fontToCopyTbl">Tabla de fuentes del documento a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.mainAdjustColor(Net.Sgoliver.NRtfTree.Core.RtfTree)">
+            <summary>
+            Ajusta los colores del documento a insertar.
+            </summary>
+            <param name="docToInsert">Documento a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.adjustColorRecursive(Net.Sgoliver.NRtfTree.Core.RtfTreeNode,Net.Sgoliver.NRtfTree.Util.RtfColorTable,Net.Sgoliver.NRtfTree.Util.RtfColorTable)">
+            <summary>
+            Ajusta los colores del documento a insertar.
+            </summary>
+            <param name="parentNode">Nodo grupo que se est?procesando.</param>
+            <param name="colorDestTbl">Tabla de colores resultante.</param>
+            <param name="colorToCopyTbl">Tabla de colores del documento a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.execMergeDoc(Net.Sgoliver.NRtfTree.Core.RtfTreeNode,Net.Sgoliver.NRtfTree.Core.RtfTree,System.Int32)">
+            <summary>
+            Inserta el nuevo 醨bol en el 醨bol base (como un nuevo grupo) eliminando toda la cabecera del documento insertado.
+            </summary>
+            <param name="parentNode">Grupo base en el que se insertar?el nuevo arbol.</param>
+            <param name="treeToCopyParent">Nuevo 醨bol a insertar.</param>
+            <param name="intCurrIndex">蚽dice en el que se insertar?el nuevo 醨bol dentro del grupo base.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfMerger.cleanToInsertDoc(Net.Sgoliver.NRtfTree.Core.RtfTree)">
+            <summary>
+            Elimina los elementos no deseados del documento a insertar, por ejemplo los nodos "\par" finales.
+            </summary>
+            <param name="docToInsert">Documento a insertar.</param>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.RtfNodeCollection">
+            <summary>
+            Colecci髇 de nodos de un documento RTF.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfNodeCollection.Add(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            A馻de un nuevo nodo a la colecci髇 actual.
+            </summary>
+            <param name="node">Nuevo nodo a a馻dir.</param>
+            <returns>Posici髇 en la que se ha insertado el nuevo nodo.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfNodeCollection.Insert(System.Int32,Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Inserta un nuveo nodo en una posici髇 determinada de la colecci髇.
+            </summary>
+            <param name="index">Posici髇 en la que insertar el nodo.</param>
+            <param name="node">Nuevo nodo a insertar.</param>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfNodeCollection.Item(System.Int32)">
+            <summary>
+            Indizador de la clase RtfNodeCollection. 
+            Devuelve el nodo que ocupa la posici髇 'index' dentro de la colecci髇.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfNodeCollection.IndexOf(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Devuelve el 韓dice del nodo pasado como par醡etro dentro de la lista de nodos de la colecci髇.
+            </summary>
+            <param name="node">Nodo a buscar en la colecci髇.</param>
+            <returns>Indice del nodo buscado. Devolver?el valor -1 en caso de no encontrarse el nodo dentro de la colecci髇.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfNodeCollection.IndexOf(Net.Sgoliver.NRtfTree.Core.RtfTreeNode,System.Int32)">
+            <summary>
+            Devuelve el 韓dice del nodo pasado como par醡etro dentro de la lista de nodos de la colecci髇.
+            </summary>
+            <param name="node">Nodo a buscar en la colecci髇.</param>
+            <param name="startIndex">Posici髇 dentro de la colecci髇 a partir del que se buscar?</param>
+            <returns>Indice del nodo buscado. Devolver?el valor -1 en caso de no encontrarse el nodo dentro de la colecci髇.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfNodeCollection.IndexOf(System.String)">
+            <summary>
+            Devuelve el 韓dice del primer nodo de la colecci髇 cuya clave sea la pasada como par醡etro.
+            </summary>
+            <param name="key">Clave a buscar en la colecci髇.</param>
+            <returns>Indice del nodo buscado. Devolver?el valor -1 en caso de no encontrarse el nodo dentro de la colecci髇.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfNodeCollection.IndexOf(System.String,System.Int32)">
+            <summary>
+            Devuelve el 韓dice del primer nodo de la colecci髇 cuya clave sea la pasada como par醡etro.
+            </summary>
+            <param name="key">Clave a buscar en la colecci髇.</param>
+            <param name="startIndex">Posici髇 dentro de la colecci髇 a partir del que se buscar?</param>
+            <returns>Indice del nodo buscado. Devolver?el valor -1 en caso de no encontrarse el nodo dentro de la colecci髇.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfNodeCollection.AddRange(Net.Sgoliver.NRtfTree.Core.RtfNodeCollection)">
+            <summary>
+            A馻de al final de la colecci髇 una nueva lista de nodos.
+            </summary>
+            <param name="collection">Nueva lista de nodos a a馻dir a la colecci髇 actual.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfNodeCollection.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            Elimina un conjunto de nodos adyacentes de la colecci髇.
+            </summary>
+            <param name="index">蚽dice del primer nodo del conjunto a eliminar.</param>
+            <param name="count">N鷐ero de nodos a eliminar.</param>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.RtfNodeType">
+            <summary>
+            Tipos de nodo de un documento RTF.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfNodeType.Root">
+            <summary>
+            Nodo ra韟.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfNodeType.Keyword">
+            <summary>
+            Palabra clave.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfNodeType.Control">
+            <summary>
+            S韒bolo de Control.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfNodeType.Text">
+            <summary>
+            Texto del documento.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfNodeType.Group">
+            <summary>
+            Grupo RTF
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfNodeType.None">
+            <summary>
+            No se ha inicializado el nodo
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.RtfPullParser">
+            <summary>
+            Pull parser para documentos RTF.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfPullParser.#ctor">
+            <summary>
+            Constructor de la clase.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfPullParser.LoadRtfFile(System.String)">
+            <summary>
+            Carga un fichero en formato RTF
+            </summary>
+            <param name="path">Ruta del fichero.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfPullParser.LoadRtfText(System.String)">
+            <summary>
+            Carga una cadena de Texto con formato RTF.
+            </summary>
+            <param name="text">Cadena de Texto que contiene el documento.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfPullParser.GetEventType">
+            <summary>
+            Obtiene el tipo de evento actual.
+            </summary>
+            <returns>Tipo de evento actual.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfPullParser.Next">
+            <summary>
+            Obtiene el siguiente elemento del documento.
+            </summary>
+            <returns>Siguiente elemento del documento.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfPullParser.GetName">
+            <summary>
+            Obtiene la palabra clave / símbolo control del elemento actual.
+            </summary>
+            <returns>Palabra clave / símbolo control del elemento actual.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfPullParser.GetParam">
+            <summary>
+            Obtiene el parámetro del elemento actual.
+            </summary>
+            <returns>Parámetro del elemento actual.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfPullParser.HasParam">
+            <summary>
+            Consulta si el elemento actual tiene parámetro.
+            </summary>
+            <returns>Devuelve TRUE si el elemento actual tiene parámetro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfPullParser.GetText">
+            <summary>
+            Obtiene el texto del elemento actual.
+            </summary>
+            <returns>Texto del elemento actual.</returns>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.RtfReader">
+            <summary>
+            Esta clase proporciona los m閠odos necesarios para la carga y an醠isis secuencial de un documento RTF.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfReader.#ctor(Net.Sgoliver.NRtfTree.Core.SarParser)">
+            <summary>
+            Constructor de la clase RtfReader.
+            </summary>
+            <param name="reader">
+            Objeto del tipo SARParser que contienen los m閠odos necesarios para el tratamiento de los
+            distintos elementos de un documento RTF.
+            </param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfReader.LoadRtfFile(System.String)">
+            <summary>
+            Carga un documento RTF dada la ruta del fichero que lo contiene.
+            </summary>
+            <param name="path">Ruta del fichero que contiene el documento RTF.</param>
+            <returns>
+            Resultado de la carga del documento. Si la carga se realiza correctamente
+            se devuelve el valor 0.
+            </returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfReader.LoadRtfText(System.String)">
+            <summary>
+            Carga un documento RTF dada la cadena de caracteres que lo contiene.
+            </summary>
+            <param name="text">Cadena de caractres que contiene el documento RTF.</param>
+            <returns>
+            Resultado de la carga del documento. Si la carga se realiza correctamente
+            se devuelve el valor 0.
+            </returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfReader.Parse">
+            <summary>
+            Comienza el an醠isis del documento RTF y provoca la llamada a los distintos m閠odos 
+            del objeto IRtfReader indicado en el constructor de la clase.
+            </summary>
+            <returns>
+            Resultado del an醠isis del documento. Si la carga se realiza correctamente
+            se devuelve el valor 0.
+            </returns>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.RtfToken">
+            <summary>
+            Token leido por el analizador l閤ico para documentos RTF.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfToken.type">
+            <summary>
+            Tipo del token.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfToken.key">
+            <summary>
+            Palabra clave / S韒bolo de Control / Caracter.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfToken.hasParam">
+            <summary>
+            Indica si el token tiene par醡etro asociado.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfToken.param">
+            <summary>
+            Par醡etro de la palabra clave o s韒bolo de Control.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfToken.Type">
+            <summary>
+            Tipo del token.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfToken.Key">
+            <summary>
+            Palabra clave / S韒bolo de Control / Caracter.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfToken.HasParameter">
+            <summary>
+            Indica si el token tiene par醡etro asociado.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfToken.Parameter">
+            <summary>
+            Par醡etro de la palabra clave o s韒bolo de Control.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfToken.#ctor">
+            <summary>
+            Constructor de la clase RtfToken. Crea un token vac韔.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.RtfTokenType">
+            <summary>
+            Tipos de token de un 醨bol de documento RTF.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTokenType.None">
+            <summary>
+            Indica que el token s髄o se ha inicializado.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTokenType.Keyword">
+            <summary>
+            Palabra clave sin par醡etro.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTokenType.Control">
+            <summary>
+            S韒bolo de Control sin par醡etro.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTokenType.Text">
+            <summary>
+            Texto del documento.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTokenType.Eof">
+            <summary>
+            Marca de fin de fichero.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTokenType.GroupStart">
+            <summary>
+            Inicio de grupo: '{'
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTokenType.GroupEnd">
+            <summary>
+            Fin de grupo: '}'
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.RtfTree">
+            <summary>
+            Reresenta la estructura en forma de 醨bol de un documento RTF.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTree.rootNode">
+            <summary>
+            Nodo ra韟 del documento RTF.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTree.rtf">
+            <summary>
+            Fichero/Cadena de entrada RTF
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTree.lex">
+            <summary>
+            Analizador l閤ico para RTF
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTree.tok">
+            <summary>
+            Token actual
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTree.level">
+            <summary>
+            Profundidad del nodo actual
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTree.mergeSpecialCharacters">
+            <summary>
+            Indica si se decodifican los caracteres especiales (\') uni閚dolos a nodos de texto contiguos.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.#ctor">
+            <summary>
+            Constructor de la clase RtfTree.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.CloneTree">
+            <summary>
+            Realiza una copia exacta del 醨bol RTF.
+            </summary>
+            <returns>Devuelve una copia exacta del 醨bol RTF.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.LoadRtfFile(System.String)">
+            <summary>
+            Carga un fichero en formato RTF.
+            </summary>
+            <param name="path">Ruta del fichero con el documento.</param>
+            <returns>Se devuelve el valor 0 en caso de no producirse ning鷑 error en la carga del documento.
+            En caso contrario se devuelve el valor -1.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.LoadRtfText(System.String)">
+            <summary>
+            Carga una cadena de Texto con formato RTF.
+            </summary>
+            <param name="text">Cadena de Texto que contiene el documento.</param>
+            <returns>Se devuelve el valor 0 en caso de no producirse ning鷑 error en la carga del documento.
+            En caso contrario se devuelve el valor -1.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.SaveRtf(System.String)">
+            <summary>
+            Escribe el c骴igo RTF del documento a un fichero.
+            </summary>
+            <param name="filePath">Ruta del fichero a generar con el documento RTF.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.ToString">
+            <summary>
+            Devuelve una representaci髇 Textual del documento cargado.
+            </summary>
+            <returns>Cadena de caracteres con la representaci髇 del documento.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.ToStringEx">
+            <summary>
+            Devuelve una representaci髇 Textual del documento cargado. A馻de el tipo de nodo a la izquierda del contenido del nodo.
+            </summary>
+            <returns>Cadena de caracteres con la representaci髇 del documento.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.GetFontTable">
+            <summary>
+            Devuelve la tabla de fuentes del documento RTF.
+            </summary>
+            <returns>Tabla de fuentes del documento RTF</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.GetColorTable">
+            <summary>
+            Devuelve la tabla de colores del documento RTF.
+            </summary>
+            <returns>Tabla de colores del documento RTF</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.GetStyleSheetTable">
+            <summary>
+            Devuelve la tabla de hojas de estilo del documento RTF.
+            </summary>
+            <returns>Tabla de hojas de estilo del documento RTF.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.GetInfoGroup">
+            <summary>
+            Devuelve la informaci髇 contenida en el grupo "\info" del documento RTF.
+            </summary>
+            <returns>Objeto InfoGroup con la informaci髇 del grupo "\info" del documento RTF.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.GetEncoding">
+            <summary>
+            Devuelve la tabla de c骴igos con la que est?codificado el documento RTF.
+            </summary>
+            <returns>Tabla de c骴igos del documento RTF. Si no est?especificada en el documento se devuelve la tabla de c骴igos actual del sistema.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.parseRtfTree">
+            <summary>
+            Analiza el documento y lo carga con estructura de 醨bol.
+            </summary>
+            <returns>Se devuelve el valor 0 en caso de no producirse ning鷑 error en la carga del documento.
+            En caso contrario se devuelve el valor -1.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.DecodeControlChar(System.Int32,System.Text.Encoding)">
+            <summary>
+            Decodifica un caracter especial indicado por su c骴igo decimal
+            </summary>
+            <param name="code">C骴igo del caracter especial (\')</param>
+            <param name="enc">Codificaci髇 utilizada para decodificar el caracter especial.</param>
+            <returns>Caracter especial decodificado.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.toStringInm(Net.Sgoliver.NRtfTree.Core.RtfTreeNode,System.Int32,System.Boolean)">
+            <summary>
+            M閠odo auxiliar para generar la representaci髇 Textual del documento RTF.
+            </summary>
+            <param name="curNode">Nodo actual del 醨bol.</param>
+            <param name="level">Nivel actual en 醨bol.</param>
+            <param name="showNodeTypes">Indica si se mostrar?el tipo de cada nodo del 醨bol.</param>
+            <returns>Representaci髇 Textual del nodo 'curNode' con nivel 'level'</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.parseDateTime(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Parsea una fecha con formato "\yr2005\mo12\dy2\hr22\min56\sec15"
+            </summary>
+            <param name="group">Grupo RTF con la fecha.</param>
+            <returns>Objeto DateTime con la fecha leida.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.ConvertToText">
+            <summary>
+            Extrae el texto de un 醨bol RTF.
+            </summary>
+            <returns>Texto plano del documento.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTree.ParseStyleSheet(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Parsea el nodo con la tabla de estilos del documento.
+            </summary>
+            <param name="ssnode">Nodo con la tabla de estilos.</param>
+            <returns>Tabla de estilos del documento.</returns>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTree.RootNode">
+            <summary>
+            Devuelve el nodo ra韟 del 醨bol del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTree.MainGroup">
+            <summary>
+            Devuelve el grupo principal del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTree.Rtf">
+            <summary>
+            Devuelve el Texto RTF del documento.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTree.MergeSpecialCharacters">
+            <summary>
+            Indica si se decodifican los caracteres especiales (\') uni閚dolos a nodos de texto contiguos.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTree.Text">
+            <summary>
+            Devuelve el texto plano del documento.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.RtfTreeNode">
+            <summary>
+            Nodo RTF de la representaci髇 en 醨bol de un documento.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.type">
+            <summary>
+            Tipo de nodo.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.key">
+            <summary>
+            Palabra clave / S韒bolo de Control / Texto.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.hasParam">
+            <summary>
+            Indica si la palabra clave o s韒bolo de Control tiene par醡etro.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.param">
+            <summary>
+            Par醡etro de la palabra clave o s韒bolo de Control.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.children">
+            <summary>
+            Nodos hijos del nodo actual.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.parent">
+            <summary>
+            Nodo padre del nodo actual.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.root">
+            <summary>
+            Nodo ra韟 del documento.
+            </summary>
+        </member>
+        <member name="F:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.tree">
+            <summary>
+            羠bol Rtf al que pertenece el nodo
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.#ctor">
+            <summary>
+            Constructor de la clase RtfTreeNode. Crea un nodo sin inicializar.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.#ctor(Net.Sgoliver.NRtfTree.Core.RtfNodeType)">
+            <summary>
+            Constructor de la clase RtfTreeNode. Crea un nodo de un tipo concreto.
+            </summary>
+            <param name="nodeType">Tipo del nodo que se va a crear.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.#ctor(Net.Sgoliver.NRtfTree.Core.RtfNodeType,System.String,System.Boolean,System.Int32)">
+            <summary>
+            Constructor de la clase RtfTreeNode. Crea un nodo especificando su tipo, palabra clave y par醡etro.
+            </summary>
+            <param name="type">Tipo del nodo.</param>
+            <param name="key">Palabra clave o s韒bolo de Control.</param>
+            <param name="hasParameter">Indica si la palabra clave o el s韒bolo de Control va acompa馻do de un par醡etro.</param>
+            <param name="parameter">Par醡etro del la palabra clave o s韒bolo de Control.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.#ctor(Net.Sgoliver.NRtfTree.Core.RtfToken)">
+            <summary>
+            Constructor privado de la clase RtfTreeNode. Crea un nodo a partir de un token del analizador l閤ico.
+            </summary>
+            <param name="token">Token RTF devuelto por el analizador l閤ico.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.AppendChild(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            A馻de un nodo al final de la lista de hijos.
+            </summary>
+            <param name="newNode">Nuevo nodo a a馻dir.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.InsertChild(System.Int32,Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Inserta un nuevo nodo en una posici髇 determinada de la lista de hijos.
+            </summary>
+            <param name="index">Posici髇 en la que se insertar?el nodo.</param>
+            <param name="newNode">Nuevo nodo a insertar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.RemoveChild(System.Int32)">
+            <summary>
+            Elimina un nodo de la lista de hijos.
+            </summary>
+            <param name="index">Indice del nodo a eliminar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.RemoveChild(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Elimina un nodo de la lista de hijos.
+            </summary>
+            <param name="node">Nodo a eliminar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.RemoveChildDeep(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Elimina un nodo de la lista de hijos.
+            </summary>
+            <param name="node">Nodo a eliminar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.ReplaceChildDeep(Net.Sgoliver.NRtfTree.Core.RtfTreeNode,Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Elimina un nodo de la lista de hijos.
+            </summary>
+            <param name="node">Nodo a eliminar.</param>
+            <param name="newnode">Nodo a eliminar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.CloneNode">
+            <summary>
+            Realiza una copia exacta del nodo actual.
+            </summary>
+            <returns>Devuelve una copia exacta del nodo actual.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.HasChildNodes">
+            <summary>
+            Indica si el nodo actual tiene nodos hijos.
+            </summary>
+            <returns>Devuelve true si el nodo actual tiene alg鷑 nodo hijo.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSingleChildNode(System.String)">
+            <summary>
+            Devuelve el primer nodo de la lista de nodos hijos del nodo actual cuya palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <returns>Primer nodo de la lista de nodos hijos del nodo actual cuya palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSingleChildNode(Net.Sgoliver.NRtfTree.Core.RtfNodeType)">
+            <summary>
+            Devuelve el primer nodo de la lista de nodos hijos del nodo actual cuyo tipo es el indicado como par醡etro.
+            </summary>
+            <param name="nodeType">Tipo de nodo buscado.</param>
+            <returns>Primer nodo de la lista de nodos hijos del nodo actual cuyo tipo es el indicado como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSingleChildNode(System.String,System.Int32)">
+            <summary>
+            Devuelve el primer nodo de la lista de nodos hijos del nodo actual cuya palabra clave y par醡etro son los indicados como par醡etros.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <param name="param">Par醡etro buscado.</param>
+            <returns>Primer nodo de la lista de nodos hijos del nodo actual cuya palabra clave y par醡etro son los indicados como par醡etros.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSingleChildGroup(System.String)">
+            <summary>
+            Devuelve el primer nodo grupo de la lista de nodos hijos del nodo actual cuya primera palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <returns>Primer nodo grupo de la lista de nodos hijos del nodo actual cuya primera palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSingleChildGroup(System.String,System.Boolean)">
+            <summary>
+            Devuelve el primer nodo grupo de la lista de nodos hijos del nodo actual cuya primera palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <param name="ignoreSpecial">Si est?activo se ignorar醤 los nodos de control '\*' previos a algunas palabras clave.</param>
+            <returns>Primer nodo grupo de la lista de nodos hijos del nodo actual cuya primera palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSingleNode(Net.Sgoliver.NRtfTree.Core.RtfNodeType)">
+            <summary>
+            Devuelve el primer nodo del 醨bol, a partir del nodo actual, cuyo tipo es el indicado como par醡etro.
+            </summary>
+            <param name="nodeType">Tipo del nodo buscado.</param>
+            <returns>Primer nodo del 醨bol, a partir del nodo actual, cuyo tipo es el indicado como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSingleNode(System.String)">
+            <summary>
+            Devuelve el primer nodo del 醨bol, a partir del nodo actual, cuya palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <returns>Primer nodo del 醨bol, a partir del nodo actual, cuya palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSingleGroup(System.String)">
+            <summary>
+            Devuelve el primer nodo grupo del 醨bol, a partir del nodo actual, cuya primera palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <returns>Primer nodo grupo del 醨bol, a partir del nodo actual, cuya primera palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSingleGroup(System.String,System.Boolean)">
+            <summary>
+            Devuelve el primer nodo grupo del 醨bol, a partir del nodo actual, cuya primera palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <param name="ignoreSpecial">Si est?activo se ignorar醤 los nodos de control '\*' previos a algunas palabras clave.</param>
+            <returns>Primer nodo grupo del 醨bol, a partir del nodo actual, cuya primera palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSingleNode(System.String,System.Int32)">
+            <summary>
+            Devuelve el primer nodo del 醨bol, a partir del nodo actual, cuya palabra clave y par醡etro son los indicados como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <param name="param">Par醡etro buscado.</param>
+            <returns>Primer nodo del 醨bol, a partir del nodo actual, cuya palabra clave y par醡etro son ls indicados como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectNodes(System.String)">
+            <summary>
+            Devuelve todos los nodos, a partir del nodo actual, cuya palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <returns>Colecci髇 de nodos, a partir del nodo actual, cuya palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectGroups(System.String)">
+            <summary>
+            Devuelve todos los nodos grupo, a partir del nodo actual, cuya primera palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <returns>Colecci髇 de nodos grupo, a partir del nodo actual, cuya primera palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectGroups(System.String,System.Boolean)">
+            <summary>
+            Devuelve todos los nodos grupo, a partir del nodo actual, cuya primera palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <param name="ignoreSpecial">Si est?activo se ignorar醤 los nodos de control '\*' previos a algunas palabras clave.</param>
+            <returns>Colecci髇 de nodos grupo, a partir del nodo actual, cuya primera palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectNodes(Net.Sgoliver.NRtfTree.Core.RtfNodeType)">
+            <summary>
+            Devuelve todos los nodos, a partir del nodo actual, cuyo tipo es el indicado como par醡etro.
+            </summary>
+            <param name="nodeType">Tipo del nodo buscado.</param>
+            <returns>Colecci髇 de nodos, a partir del nodo actual, cuyo tipo es la indicado como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectNodes(System.String,System.Int32)">
+            <summary>
+            Devuelve todos los nodos, a partir del nodo actual, cuya palabra clave y par醡etro son los indicados como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <param name="param">Par醡etro buscado.</param>
+            <returns>Colecci髇 de nodos, a partir del nodo actual, cuya palabra clave y par醡etro son los indicados como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectChildNodes(System.String)">
+            <summary>
+            Devuelve todos los nodos de la lista de nodos hijos del nodo actual cuya palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <returns>Colecci髇 de nodos de la lista de nodos hijos del nodo actual cuya palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectChildGroups(System.String)">
+            <summary>
+            Devuelve todos los nodos grupos de la lista de nodos hijos del nodo actual cuya primera palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <returns>Colecci髇 de nodos grupo de la lista de nodos hijos del nodo actual cuya primera palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectChildGroups(System.String,System.Boolean)">
+            <summary>
+            Devuelve todos los nodos grupos de la lista de nodos hijos del nodo actual cuya primera palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <param name="ignoreSpecial">Si est?activo se ignorar醤 los nodos de control '\*' previos a algunas palabras clave.</param>
+            <returns>Colecci髇 de nodos grupo de la lista de nodos hijos del nodo actual cuya primera palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectChildNodes(Net.Sgoliver.NRtfTree.Core.RtfNodeType)">
+            <summary>
+            Devuelve todos los nodos de la lista de nodos hijos del nodo actual cuyo tipo es el indicado como par醡etro.
+            </summary>
+            <param name="nodeType">Tipo del nodo buscado.</param>
+            <returns>Colecci髇 de nodos de la lista de nodos hijos del nodo actual cuyo tipo es el indicado como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectChildNodes(System.String,System.Int32)">
+            <summary>
+            Devuelve todos los nodos de la lista de nodos hijos del nodo actual cuya palabra clave y par醡etro son los indicados como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <param name="param">Par醡etro buscado.</param>
+            <returns>Colecci髇 de nodos de la lista de nodos hijos del nodo actual cuya palabra clave y par醡etro son los indicados como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSibling(System.String)">
+            <summary>
+            Devuelve el siguiente nodo hermano del actual cuya palabra clave es la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <returns>Primer nodo hermano del actual cuya palabra clave es la indicada como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSibling(Net.Sgoliver.NRtfTree.Core.RtfNodeType)">
+            <summary>
+            Devuelve el siguiente nodo hermano del actual cuyo tipo es el indicado como par醡etro.
+            </summary>
+            <param name="nodeType">Tpo de nodo buscado.</param>
+            <returns>Primer nodo hermano del actual cuyo tipo es el indicado como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.SelectSibling(System.String,System.Int32)">
+            <summary>
+            Devuelve el siguiente nodo hermano del actual cuya palabra clave y par醡etro son los indicados como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <param name="param">Par醡etro buscado.</param>
+            <returns>Primer nodo hermano del actual cuya palabra clave y par醡etro son los indicados como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.FindText(System.String)">
+            <summary>
+            Busca todos los nodos de tipo Texto que contengan el texto buscado.
+            </summary>
+            <param name="text">Texto buscado en el documento.</param>
+            <returns>Lista de nodos, a partir del actual, que contienen el texto buscado.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.ReplaceText(System.String,System.String)">
+            <summary>
+            Busca y reemplaza un texto determinado en todos los nodos de tipo Texto a partir del actual.
+            </summary>
+            <param name="oldValue">Texto buscado.</param>
+            <param name="newValue">Texto de reemplazo.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.ToString">
+            <summary>
+            Devuelve una representaci髇 del nodo donde se indica su tipo, clave, indicador de par醡etro y valor de par醡etro
+            </summary>
+            <returns>Cadena de caracteres del tipo [TIPO, CLAVE, IND_PARAMETRO, VAL_PARAMETRO]</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.DecodeControlChar(System.Int32,System.Text.Encoding)">
+            <summary>
+            Decodifica un caracter especial indicado por su c骴igo decimal
+            </summary>
+            <param name="code">C骴igo del caracter especial (\')</param>
+            <param name="enc">Codificaci髇 utilizada para decodificar el caracter especial.</param>
+            <returns>Caracter especial decodificado.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.getRtf">
+            <summary>
+            Obtiene el Texto RTF a partir de la representaci髇 en 醨bol del nodo actual.
+            </summary>
+            <returns>Texto RTF del nodo.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.getRtfInm(Net.Sgoliver.NRtfTree.Core.RtfTreeNode,Net.Sgoliver.NRtfTree.Core.RtfTreeNode,System.Text.Encoding)">
+            <summary>
+            M閠odo auxiliar para obtener el Texto RTF del nodo actual a partir de su representaci髇 en 醨bol.
+            </summary>
+            <param name="curNode">Nodo actual del 醨bol.</param>
+            <param name="prevNode">Nodo anterior tratado.</param>
+            <param name="enc">Codificaci髇 del documento.</param>
+            <returns>Texto en formato RTF del nodo.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.AppendEncoded(System.Text.StringBuilder,System.String,System.Text.Encoding)">
+            <summary>
+            Concatena dos cadenas utilizando la codificaci髇 del documento.
+            </summary>
+            <param name="res">Cadena original.</param>
+            <param name="s">Cadena a a馻dir.</param>
+            <param name="enc">Codificaci髇 del documento.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.GetHexa(System.Int32)">
+            <summary>
+            Obtiene el c骴igo hexadecimal de un entero.
+            </summary>
+            <param name="code">N鷐ero entero.</param>
+            <returns>C骴igo hexadecimal del entero pasado como par醡etro.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.updateNodeRoot(Net.Sgoliver.NRtfTree.Core.RtfTreeNode)">
+            <summary>
+            Actualiza las propiedades Root y Tree de un nodo (y sus hijos) con las del nodo actual.
+            </summary>
+            <param name="node">Nodo a actualizar.</param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.GetText(System.Boolean)">
+            <summary>
+            Obtiene el texto contenido en el nodo actual.
+            </summary>
+            <param name="raw">Si este par醡etro est?activado se extraer?todo el texto contenido en el nodo, independientemente de si 閟te
+            forma parte del texto real del documento.</param>
+            <returns>Texto extraido del nodo.</returns>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.GetText(System.Boolean,System.Int32)">
+            <summary>
+            Obtiene el texto contenido en el nodo actual.
+            </summary>
+            <param name="raw">Si este par醡etro est?activado se extraer?todo el texto contenido en el nodo, independientemente de si 閟te
+            forma parte del texto real del documento.</param>
+            <param name="ignoreNchars">Ignore next N chars following \uN keyword</param>
+            <returns>Texto extraido del nodo.</returns>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.RootNode">
+            <summary>
+            Devuelve el nodo ra韟 del 醨bol del documento.
+            </summary>
+            <remarks>
+            蓅te no es el nodo ra韟 del 醨bol, sino que se trata simplemente de un nodo ficticio  de tipo ROOT del que parte el resto del 醨bol RTF.
+            Tendr?por tanto un solo nodo hijo de tipo GROUP, raiz real del 醨bol.
+            </remarks>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.ParentNode">
+            <summary>
+            Devuelve el nodo padre del nodo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.Tree">
+            <summary>
+            Devuelve el 醨bol Rtf al que pertenece el nodo.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.NodeType">
+            <summary>
+            Devuelve el tipo del nodo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.NodeKey">
+            <summary>
+            Devuelve la palabra clave, s韒bolo de Control o Texto del nodo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.HasParameter">
+            <summary>
+            Indica si el nodo actual tiene par醡etro asignado.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.Parameter">
+            <summary>
+            Devuelve el par醡etro asignado al nodo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.ChildNodes">
+            <summary>
+            Devuelve la colecci髇 de nodos hijo del nodo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.Item(System.String)">
+            <summary>
+            Devuelve el primer nodo hijo cuya palabra clave sea la indicada como par醡etro.
+            </summary>
+            <param name="keyword">Palabra clave buscada.</param>
+            <returns>Primer nodo hijo cuya palabra clave sea la indicada como par醡etro. En caso de no existir se devuelve null.</returns>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.Item(System.Int32)">
+            <summary>
+            Devuelve el hijo n-閟imo del nodo actual.
+            </summary>
+            <param name="childIndex">蚽dice del nodo hijo a recuperar.</param>
+            <returns>Nodo hijo n-閟imo del nodo actual. Devuelve null en caso de no existir.</returns>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.FirstChild">
+            <summary>
+            Devuelve el primer nodo hijo del nodo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.LastChild">
+            <summary>
+            Devuelve el 鷏timo nodo hijo del nodo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.NextSibling">
+            <summary>
+            Devuelve el nodo hermano siguiente del nodo actual (Dos nodos son hermanos si tienen el mismo nodo padre [ParentNode]).
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.PreviousSibling">
+            <summary>
+            Devuelve el nodo hermano anterior del nodo actual (Dos nodos son hermanos si tienen el mismo nodo padre [ParentNode]).
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.NextNode">
+            <summary>
+            Devuelve el siguiente nodo del 醨bol. 
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.PreviousNode">
+            <summary>
+            Devuelve el nodo anterior del 醨bol.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.Rtf">
+            <summary>
+            Devuelve el c骴igo RTF del nodo actual y todos sus nodos hijos.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.Index">
+            <summary>
+            Devuelve el 韓dice del nodo actual dentro de la lista de hijos de su nodo padre.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.Text">
+            <summary>
+            Devuelve el fragmento de texto del documento contenido en el nodo actual.
+            </summary>
+        </member>
+        <member name="P:Net.Sgoliver.NRtfTree.Core.RtfTreeNode.RawText">
+            <summary>
+            Devuelve todo el texto contenido en el nodo actual.
+            </summary>
+        </member>
+        <member name="T:Net.Sgoliver.NRtfTree.Core.SarParser">
+            <summary>
+            Esta clase, utilizada por RtfReader, contiene todos los m閠odos necesarios para tratar cada uno de 
+            los tipos de elementos presentes en un documento RTF. Estos m閠odos ser醤 llamados autom醫icamente 
+            durante el an醠isis del documento RTF realizado por la clase RtfReader.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.SarParser.StartRtfDocument">
+            <summary>
+            Este m閠odo se llama una s髄a vez al comienzo del an醠isis del documento RTF.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.SarParser.EndRtfDocument">
+            <summary>
+            Este m閠odo se llama una s髄a vez al final del an醠isis del documento RTF.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.SarParser.StartRtfGroup">
+            <summary>
+            Este m閠odo se llama cada vez que se lee una llave de comienzo de grupo RTF.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.SarParser.EndRtfGroup">
+            <summary>
+            Este m閠odo se llama cada vez que se lee una llave de fin de grupo RTF.
+            </summary>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.SarParser.RtfKeyword(System.String,System.Boolean,System.Int32)">
+            <summary>
+            Este m閠odo se llama cada vez que se lee una palabra clave RTF.
+            </summary>
+            <param name="key">Palabra clave leida del documento.</param>
+            <param name="hasParameter">Indica si la palabra clave va acompa馻da de un par醡etro.</param>
+            <param name="parameter">
+            Par醡etro que acompa馻 a la palabra clave. En caso de que la palabra clave no vaya acompa馻da
+            de ning鷑 par醡etro, es decir, que el campo hasParam sea 'false', 
+            este campo contendr?el valor 0.
+            </param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.SarParser.RtfControl(System.String,System.Boolean,System.Int32)">
+            <summary>
+            Este m閠odo se llama cada vez que se lee un s韒bolo de Control RTF.
+            </summary>
+            <param name="key">S韒bolo de Control leido del documento.</param>
+            <param name="hasParameter">Indica si el s韒bolo de Control va acompa馻do de un par醡etro.</param>
+            <param name="parameter">
+            Par醡etro que acompa馻 al s韒bolo de Control. En caso de que el s韒bolo de Control no vaya acompa馻do
+            de ning鷑 par醡etro, es decir, que el campo hasParam sea 'false', 
+            este campo contendr?el valor 0.
+            </param>
+        </member>
+        <member name="M:Net.Sgoliver.NRtfTree.Core.SarParser.RtfText(System.String)">
+            <summary>
+            Este m閠odo se llama cada vez que se lee un fragmento de Texto del documento RTF.
+            </summary>
+            <param name="text">Texto leido del documento.</param>
+        </member>
+    </members>
+</doc>

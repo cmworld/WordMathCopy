@@ -1,0 +1,5 @@
+F:\workspace\vs\WordCopyApplication\MTSDKDN\bin\Release\MTSDKDN.dll
+F:\workspace\vs\WordCopyApplication\MTSDKDN\bin\Release\MTSDKDN.pdb
+F:\workspace\vs\WordCopyApplication\MTSDKDN\obj\Release\MTSDKDN.csprojResolveAssemblyReference.cache
+F:\workspace\vs\WordCopyApplication\MTSDKDN\obj\Release\MTSDKDN.dll
+F:\workspace\vs\WordCopyApplication\MTSDKDN\obj\Release\MTSDKDN.pdb

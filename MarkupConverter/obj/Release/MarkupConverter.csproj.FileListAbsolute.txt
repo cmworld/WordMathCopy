@@ -1,0 +1,5 @@
+F:\workspace\vs\WordCopyApplication\MarkupConverter\bin\Release\MarkupConverter.dll
+F:\workspace\vs\WordCopyApplication\MarkupConverter\bin\Release\MarkupConverter.pdb
+F:\workspace\vs\WordCopyApplication\MarkupConverter\obj\Release\MarkupConverter.csprojResolveAssemblyReference.cache
+F:\workspace\vs\WordCopyApplication\MarkupConverter\obj\Release\MarkupConverter.dll
+F:\workspace\vs\WordCopyApplication\MarkupConverter\obj\Release\MarkupConverter.pdb

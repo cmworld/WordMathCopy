@@ -1,0 +1,13 @@
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\x64\Debug\TYWordCopy.exe.config
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\x64\Debug\TYWordCopy.exe
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\x64\Debug\TYWordCopy.pdb
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\x64\Debug\nrtftree-library.dll
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\x64\Debug\nrtftree-library.pdb
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\x64\Debug\nrtftree-library.xml
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\x64\Debug\MTSDKDN.dll
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\x64\Debug\MTSDKDN.pdb
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\Debug\TYWordCopy.exe.config
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\obj\x64\Debug\TYWordCopy.csproj.ResolveComReference.cache
+F:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\Debug\TYWordCopy.exe.config
+F:\workspace\vs\WordCopyApplication\WordCopyApplication\obj\x64\Debug\Interop.UIA.dll
+F:\workspace\vs\WordCopyApplication\WordCopyApplication\obj\x64\Debug\TYWordCopy.csproj.ResolveComReference.cache

@@ -1,0 +1,3 @@
+F:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\x64\Release\TYWordCopy.exe.config
+F:\workspace\vs\WordCopyApplication\WordCopyApplication\obj\x64\Release\Interop.UIA.dll
+F:\workspace\vs\WordCopyApplication\WordCopyApplication\obj\x64\Release\TYWordCopy.csproj.ResolveComReference.cache

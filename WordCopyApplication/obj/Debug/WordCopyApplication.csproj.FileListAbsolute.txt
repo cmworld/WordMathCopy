@@ -1,0 +1,8 @@
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\Debug\WordCopyApplication.exe.config
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\Debug\WordCopyApplication.exe
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\bin\Debug\WordCopyApplication.pdb
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\obj\Debug\WordCopyApplication.csprojResolveAssemblyReference.cache
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\obj\Debug\WordCopyApplication.Properties.Resources.resources
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\obj\Debug\WordCopyApplication.csproj.GenerateResource.Cache
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\obj\Debug\WordCopyApplication.exe
+E:\workspace\vs\WordCopyApplication\WordCopyApplication\obj\Debug\WordCopyApplication.pdb

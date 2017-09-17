@@ -1,0 +1,4 @@
+F:\workspace\vs\WordCopyApplication\nrtftree-library\bin\Release\nrtftree-library.dll
+F:\workspace\vs\WordCopyApplication\nrtftree-library\bin\Release\nrtftree-library.pdb
+F:\workspace\vs\WordCopyApplication\nrtftree-library\obj\Release\nrtftree-library.dll
+F:\workspace\vs\WordCopyApplication\nrtftree-library\obj\Release\nrtftree-library.pdb
